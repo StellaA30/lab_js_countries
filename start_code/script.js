@@ -1,6 +1,9 @@
 console.log("Testing, testing, 1 2 3 ...")
 
 const pElement = document.querySelector("p");
+const button = document.querySelector("#enter");
+
+
 
 const fetchCountries = async () => {
     const countriesResponse = await fetch("https://restcountries.com/v3.1/all");
@@ -32,6 +35,21 @@ const mapCountries = (countriesList) => {
     });
 
 }
+
+// MVP task : 4
+const info = document.querySelector("#input");
+const form = document.querySelector("form");
+const logInput = () => {
+    const infoValue = info.value;
+    console.log(infoValue);
+}
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    logInput();
+});
+
+// MVP task : 5
 
 
 
