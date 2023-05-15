@@ -57,21 +57,21 @@ form.addEventListener("submit", (event) => {
 
 
 // MVP task : 5 filters
-// form.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     countryInput = logInput().toLowerCase();
-//     const countriesList = document.querySelectorAll("li");
-//     const list = document.querySelector("ul");
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    countryInput = logInput().toLowerCase();
+    const countriesList = document.querySelectorAll("li");
+    const list = document.querySelector("ul");
 
-//     for(let i = 0; i < countriesList.length; i++){
-//         const country = countriesList[i].innerText.toLowerCase();
-//         if ((country.includes(countryInput))){
-//             continue;
-//         }else{
-//             list.removeChild(countriesList[i]);
-//         }
-//     }
-// })
+    for(let i = 0; i < countriesList.length; i++){
+        const country = countriesList[i].innerText.toLowerCase();
+        if ((country.includes(countryInput))){
+            continue;
+        }else{
+            list.removeChild(countriesList[i]);
+        }
+    }
+})
 
 
 
