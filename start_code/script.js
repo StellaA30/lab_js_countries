@@ -28,7 +28,8 @@ const mapCountries = (countriesList) => {
 
         const countryFlag = document.createElement("img");
         countryFlag.src = country.flags.png;
-        countryItem.innerHTML = "country name: " + countryName + " Capital: " + countryCapital+ " population: " + countryPopulation;
+        // countryItem.innerHTML = "country name: " + countryName + " Capital: " + countryCapital+ " population: " + countryPopulation;
+        countryItem.innerHTML = "country name: " + countryName +", population: " + countryPopulation;
         unOrderedList.appendChild(countryItem);
         countryItem.appendChild(countryFlag);
         
@@ -56,21 +57,67 @@ form.addEventListener("submit", (event) => {
 
 
 // MVP task : 5 filters
+// form.addEventListener("submit", (event) => {
+//     event.preventDefault();
+//     countryInput = logInput().toLowerCase();
+//     const countriesList = document.querySelectorAll("li");
+//     const list = document.querySelector("ul");
+
+//     for(let i = 0; i < countriesList.length; i++){
+//         const country = countriesList[i].innerText.toLowerCase();
+//         if ((country.includes(countryInput))){
+//             continue;
+//         }else{
+//             list.removeChild(countriesList[i]);
+//         }
+//     }
+// })
+
+
+
+//Extensions
+// Task 7
+
 form.addEventListener("submit", (event) => {
+    const newSentence = document.createElement("p");
+    newSentence.innerText = "Awaiting API.."
     event.preventDefault();
     countryInput = logInput().toLowerCase();
     const countriesList = document.querySelectorAll("li");
     const list = document.querySelector("ul");
-
-    for(let i = 0; i < countriesList.length; i++){
-        const country = countriesList[i].innerText.toLowerCase();
-        if ((country.includes(countryInput))){
-            continue;
-        }else{
-            list.removeChild(countriesList[i]);
+    setTimeout(function() {
+ 
+    
+        for(let i = 0; i < countriesList.length; i++){
+            const country = countriesList[i].innerText.toLowerCase();
+            if ((country.includes(countryInput))){
+                continue;
+            }else{
+                list.removeChild(countriesList[i]);
+            }
         }
-    }
+
+
+    }, 2000);
+
+    
+    // event.preventDefault();
+    // countryInput = logInput().toLowerCase();
+    // const countriesList = document.querySelectorAll("li");
+    // const list = document.querySelector("ul");
+
+    // for(let i = 0; i < countriesList.length; i++){
+    //     const country = countriesList[i].innerText.toLowerCase();
+    //     if ((country.includes(countryInput))){
+    //         continue;
+    //     }else{
+    //         list.removeChild(countriesList[i]);
+    //     }
+    // }
 })
+
+
+
 
 
 
