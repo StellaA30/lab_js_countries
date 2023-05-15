@@ -39,17 +39,40 @@ const mapCountries = (countriesList) => {
 // MVP task : 4
 const info = document.querySelector("#input");
 const form = document.querySelector("form");
+
+
+//function that extract the input value
 const logInput = () => {
     const infoValue = info.value;
-    console.log(infoValue);
+    return infoValue;
 }
 
+// event listener to log the input value 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    logInput();
+    infoToLog = logInput();
+    console.log(infoToLog);
 });
 
-// MVP task : 5
+
+// MVP task : 5 filters
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    countryInput = logInput().toLowerCase();
+    const countriesList = document.querySelectorAll("li");
+    const list = document.querySelector("ul");
+
+    for(let i = 0; i < countriesList.length; i++){
+        const country = countriesList[i].innerText.toLowerCase();
+        if ((country.includes(countryInput))){
+            continue;
+        }else{
+            list.removeChild(countriesList[i]);
+        }
+    }
+})
+
+
 
 
 
